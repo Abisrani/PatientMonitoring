@@ -1,0 +1,40 @@
+import time
+import serial
+import smtplib
+import sys
+
+TO = 'ab*******@gmail.com'
+GMAIL_USER = 'ab********@gmail.com'
+GMAIL_PASS = '**********'
+ 
+SUBJECT = 'Emergency Situation Reported!!'
+TEXT = 'Please check the Critical Care Patient. There has been a emergency reported!'
+
+arduinoSerialData = serial.Serial('COM4', 9600)# open serial port..
+
+
+def send_email():
+    print("Sending Email")
+    smtpserver = smtplib.SMTP("smtp.gmail.com",587)
+    smtpserver.ehlo()
+    smtpserver.starttls()
+    smtpserver.ehlo
+    smtpserver.login(GMAIL_USER, GMAIL_PASS)
+    header = 'To:' + TO + '\n' + 'From: ' + GMAIL_USER
+    header = header + '\n' + 'Subject:' + SUBJECT + '\n'
+    print (header)
+    msg = header + '\n' + TEXT + ' \n\n'
+    smtpserver.sendmail(GMAIL_USER, TO, msg)
+    smtpserver.close()
+    
+
+
+
+while True:
+	#message = ser.readline()
+	if (arduinoSerialData.inWaiting()>0):
+		emergencyReport = b'Paniccccccccccc\r\n'
+		readingPin = arduinoSerialData.readline()
+		if(readingPin == emergencyReport):
+			send_email()
+			time.sleep(0.5)
