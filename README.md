@@ -12,3 +12,9 @@ This data will be visualised on open source cloud platform(Thingspeak) which is 
 The system is integrated to collect data online continuously. 
 This data later can be used to study and predict the possible health issues which may cause problems for patients. 
 Also there is push notification service which will help to reach out doctors or nurses in case of emergency.
+
+
+Steps for running the project...
+
+Step1 :  Download the arduino ide..
+copy the code from arduinoskec
