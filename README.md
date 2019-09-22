@@ -17,4 +17,18 @@ Also there is push notification service which will help to reach out doctors or 
 Steps for running the project...
 
 Step1 :  Download the arduino ide..
-copy the code from arduinoskec
+copy the code from arduinosketchcode into new sketch..
+
+
+Step2: Connect the components on the breadboard as shown in the diagram...
+
+Step3: Install the python 3.7 or above version..
+
+Step4: copy the code from the ArduinoPythonInterface file..
+
+Step5: keep all the files in the same folder and run the arduino sketch first and then run the python file...
+
+Step6: You are good to go... on the command line you will be able to see the readings appeanring from the arduino interfacing..
+
+
+Thanks for reading..
